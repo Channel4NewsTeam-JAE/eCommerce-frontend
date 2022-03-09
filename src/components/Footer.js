@@ -33,6 +33,8 @@ const Footer = () => {
       <Modal.Body>
           <form>
             <input type='text' placeholder="Enter Full Name"></input>
+            <br />
+            <br />
             <input type='text' placeholder="Enter Phone Number"></input>
             <br />
             <label for="message">Leave Message</label>
