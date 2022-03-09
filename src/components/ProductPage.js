@@ -122,9 +122,10 @@ const ProductPage = () => {
         <div className="card col-sm-12 col-lg-4 col-md-6 text-center">
           <img className="card-img-top" src={item.image} />
           <div className="card-body d-flex flex-column ">
+            
+            <div className="mt-auto">
             <h6 className="card-title">{item.name}</h6>
             <p className="card-text">${item.price}</p>
-            <div className="mt-auto">
               <button className="btn btn-outline-success">Cart</button>
               <button className="btn btn-outline-success">List</button>
             </div>
