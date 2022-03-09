@@ -12,6 +12,18 @@ code {
     monospace;
 }
 
+.btn {
+  margin-left: 2.5%;
+  margin-right: 2.5%
+}
+
 .navbar-brand {
   margin-left: 20px;
 }
+
+
+
+/* .card img {
+  width:100px;
+  height:100px;
+} */
