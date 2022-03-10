@@ -31,7 +31,8 @@ const CartPage = () => {
         <div className="col">
         {cartData.map((item, index) => (
            <div>
-               
+               <img className='' src={item.image} />
+               <div className='card-body d-flex flex-row'></div>
            </div>     
         ))}
       </div>
@@ -40,3 +41,4 @@ const CartPage = () => {
 }
 
 export default CartPage;
+
