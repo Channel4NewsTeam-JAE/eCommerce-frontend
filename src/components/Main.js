@@ -14,7 +14,7 @@ import {
 const Main = () => {
     
   return (
-    <div className="main-body">
+    <div className="main-body container">
         <div className="btn main-btn"><Link to="/products">Buyer</Link></div>
         <div className="btn main-btn"><Link to="/products/form">Seller</Link></div>
     </div>
