@@ -1,65 +1,61 @@
-
-import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from 'react';
 
 const Footer = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [isOpen2, setIsOpen2] = React.useState(false);
 
-  const showModal = () => {
-    setIsOpen(true);
-  };
-
-  const hideModal = () => {
-    setIsOpen(false);
-  };
-
-  const showModal2 = () => {
-    setIsOpen2(true);
-  };
-
-  const hideModal2 = () => {
-    setIsOpen2(false);
-  };
   return (
-    <>
-    
-    <a onClick={showModal}>Contact Us</a>
-    <Modal show={isOpen} onHide={hideModal}>
-      <Modal.Header>
-        <Modal.Title>Contact</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
+  <div className="container">
+ 
+    <a className="primary" data-bs-toggle="modal" data-bs-target="#myModal">Newsletter</a>
+    <a className="primary" data-bs-toggle="modal" data-bs-target="#myModal2">Contact Us</a>
+
+  <div className="modal" id="myModal">
+    <div className="modal-dialog">
+      <div className="modal-content">
+      
+     
+        <div className="modal-header">
+          <h4 className="modal-title">Register for Newsletter</h4>
+          <button type="button" className="btn-close" data-bs-dismiss="modal">&times;</button>
+        </div>
+        <div className="modal-body">
+        <form>
+            <input type='text' placeholder='Enter Full Name'></input>
+            <input type='text' placeholder='Enter Phone Number'></input>
+            <textarea id="message" rows='4' cols='40'></textarea>
+          </form>
+        </div>
+        <div className="modal-footer">
+          <button type="submit" className="btn btn-primary" data-bs-dismiss="modal">Submit</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <div className="modal" id="myModal2">
+    <div className="modal-dialog">
+      <div className="modal-content">
+      
+     
+        <div className="modal-header">
+          <h4 className="modal-title">Contact Us</h4>
+          <button type="button" className="btn-close" data-bs-dismiss="modal">&times;</button>
+        </div>
+        <div className="modal-body">
           <form>
-            <input type='text' placeholder="Enter Full Name"></input>
-            <input type='text' placeholder="Enter Phone Number"></input>
-            <br />
-            <label for="message">Leave Message</label>
-            <textarea id="message" name="message" rows="4" cols="40"></textarea>
-          </form>        
-      </Modal.Body>
-      <Modal.Footer>
-        <button onClick={hideModal} type="submit" class="btn btn-primary">Send Message</button>
-      </Modal.Footer>
-    </Modal>
-    
-    <a onClick={showModal2}>Newsletter</a>
-    <Modal show={isOpen2} onHide={hideModal2}>
-      <Modal.Header>
-        <Modal.Title>Please Enter Your Email</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <form>   
-          <input type='text'></input>
-          <button type="submit" class="btn btn-primary">Subscribe to newsletter!</button>
-        </form>
-      </Modal.Body>
-      <Modal.Footer>
-        <button onClick={hideModal2} class="btn btn-primary">Hide</button>
-      </Modal.Footer>
-    </Modal>
-  </>
+            <input type='text' placeholder="enter email"></input>
+          </form>
+        </div>
+        <div className="modal-footer">
+          <button type="button" className="btn btn-primary" data-bs-dismiss="modal">Register</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
   )
 }
 
