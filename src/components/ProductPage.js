@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { getProductsAPICall, postPurchasesAPICall, putPurchasesAPICall } from "../Api";
+import { getProductsAPICall, postPurchasesAPICall, putPurchasesAPICall, getPurchasesAPICall } from "../Api";
 import Search from "./Search";
 
 const ProductPage = () => {
@@ -31,17 +31,21 @@ const ProductPage = () => {
     const cartCopy = cartItems.slice()
     cartCopy.push(item)
     setCartItems(cartCopy)
-    console.log(cartItems)
-    
+    // console.log(cartItems)
+    addToPurchase(cartItems)
   }
 
   const addToPurchase = async (cart) => {
+    console.log("CART: ", cart)
     let priceSum = 0;
     let itemIDs = []
+    
+
     for (let i = 0; i < cart.length; i++) {
       priceSum += cart[i].price
       itemIDs.push(cart[i]._id)
     }    
+
     if (cartItems.length === 1) {
       await postPurchasesAPICall({
         totalPrice: priceSum,
@@ -49,9 +53,16 @@ const ProductPage = () => {
         products: itemIDs
       })
     } else {
-      await putPurchasesAPICall({
+      const purchase = await getPurchasesAPICall()
+      
+      console.log("PURCHASE: ", purchase)
+
+      // await putPurchasesAPICall({
         
-      })
+      //   totalPrice: priceSum,
+      //   paid: false,
+      //   products: itemIDs
+      // })
     }
   }
 
