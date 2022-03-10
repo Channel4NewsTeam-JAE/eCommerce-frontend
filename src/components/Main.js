@@ -8,7 +8,7 @@ import {
   patchProductAPICall,
   deleteProductAPICall,
 } from "./../Api.js";
-import MainCard from "./MainCard.js";
+
 
 const Main = () => {
   const [formValues, setFormValues] = useState({
@@ -24,9 +24,6 @@ const Main = () => {
     console.log(event.target.name);
     event.persist();
     setFormValues((prevValues) => {
-    //   if (event.target.tagName === "SELECT") {
-    //     const editedValue = { ...prevValues, ['category']: event.target.value };
-    //   }
       const editedValues = {
         ...prevValues,
         [event.target.name]: event.target.value,
