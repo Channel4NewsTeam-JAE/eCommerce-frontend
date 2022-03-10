@@ -4,11 +4,11 @@ import React from 'react';
 const Footer = () => {
 
   return (
-  <div className="container">
+  <div className="navbar navbar-dark bg-dark" id="footer">
  
-    <a className="primary" data-bs-toggle="modal" data-bs-target="#myModal">Newsletter</a>
+    <a className="primary col-6 nav-link" data-bs-toggle="modal" data-bs-target="#myModal">Newsletter</a>
 
-    <a className="primary" data-bs-toggle="modal" data-bs-target="#myModal2">Contact Us</a>
+    <a className="primary col-6 nav-link active" data-bs-toggle="modal" data-bs-target="#myModal2">Contact Us</a>
 
   <div className="modal" id="myModal">
     <div className="modal-dialog">
