@@ -6,9 +6,9 @@ const Footer = () => {
   return (
   <div className="navbar navbar-dark bg-dark" id="footer">
  
-    <a className="primary col-6 nav-link" data-bs-toggle="modal" data-bs-target="#myModal">Newsletter</a>
+    <a className="primary col-6 nav-link text-center" data-bs-toggle="modal" data-bs-target="#myModal">Newsletter</a>
 
-    <a className="primary col-6 nav-link active" data-bs-toggle="modal" data-bs-target="#myModal2">Contact Us</a>
+    <a className="primary col-6 nav-link active text-center" data-bs-toggle="modal" data-bs-target="#myModal2">Contact Us</a>
 
   <div className="modal" id="myModal">
     <div className="modal-dialog">
