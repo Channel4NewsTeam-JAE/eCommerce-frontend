@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { getPurchasesAPICall } from "../Api";
 
-//build out get api call that gets purchase, set to state variable
+
 const CartPage = () => {
     const [cartData, setCartData] = useState([]);
     // const [deletedCartItems, setDeletedCartItems] = useState(0);
