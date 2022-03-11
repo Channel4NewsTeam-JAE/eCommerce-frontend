@@ -8,9 +8,9 @@ const Header = () => {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a className="navbar-brand" href="#">
+      <Link className="navbar-brand" to='/'>
         GarageSale
-      </a>
+      </Link>
       <button
         className="custom-toggler navbar-toggler"
         type="button"
