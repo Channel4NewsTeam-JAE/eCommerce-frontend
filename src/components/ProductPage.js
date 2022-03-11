@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { getProductsAPICall, postPurchasesAPICall, putPurchasesAPICall, getPurchasesAPICall } from "../Api";
+import { getProductsAPICall, postPurchasesAPICall, putPurchasesAPICall, getPurchasesAPICall } from "./../Api";
 import Search from "./Search";
 
 const ProductPage = () => {
@@ -97,12 +97,11 @@ const ProductPage = () => {
               <div className="mt-auto">
                 <h6 className="card-title">{item.name}</h6>
                 <p className="card-text">${item.price}</p>
-                <button onClick={() => {handleClick(item)}} className="btn btn-outline-success">
+                <button onClick={() => {handleClick(item)}} className="btn btn-success">
                   Cart
                 </button>
-                <button className="btn btn-outline-success">List</button>
                 <button
-                  className="btn btn-outline-success"
+                  className="btn btn-success"
                   onClick={() => {
                     removeProduct(item._id);
                     setDeletedItems(deletedItems + 1);
