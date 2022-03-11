@@ -21,14 +21,34 @@ code {
   margin-left: 20px;
 }
 
+.input-group {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.carousel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+} 
 
 
+.carouselContainer img {
+  height: 700px;
+
+}
+
+
+.carouselContainer a {
+  text-decoration: none;
+  font-size: 38px;
+}
 /* .card img {
   width:100px;
   height:100px;
 } */
 
-.container {
+/* .container {
   background-color: black;
   display: flex;
   justify-content: space-around;
@@ -36,4 +56,4 @@ code {
 .container a {
   text-decoration: none;
   color: white;
-}
+} */

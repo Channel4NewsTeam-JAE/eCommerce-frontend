@@ -46,14 +46,14 @@ const postPurchasesAPICall = async (purchase) => {
     const purchaseData = await axios.post("http://localhost:3000/purchases", {
         "totalPrice": purchase.totalPrice,
         "paid": purchase.paid,
-        "products": purchase.paid
+        "products": purchase.products
     });
 }
 const putPurchasesAPICall = async (purchase) => {
     const purchaseData = await axios.put(`http://localhost:3000/purchases/${purchase.id}`, {
        "totalPrice": purchase.totalPrice,
        "paid": purchase.paid,
-       "products": purchase.paid
+       "products": purchase.products
     })
 }
 const patchPurchaseAPICall = async (purchase, purchaseValue, propertyToEdit) => {
