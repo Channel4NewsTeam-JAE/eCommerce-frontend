@@ -1,6 +1,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { getProductsAPICall, postPurchasesAPICall, putPurchasesAPICall, getPurchasesAPICall, getProductsBySearchAPICall } from "./../Api";
+import { getProductsAPICall, 
+          postPurchasesAPICall,
+           putPurchasesAPICall,
+            getPurchasesAPICall,
+             getProductsBySearchAPICall,
+              deleteProductAPICall } from "./../Api";
 import Search from "./Search";
 
 const ProductPage = () => {
@@ -23,7 +28,7 @@ const ProductPage = () => {
 
   const removeProduct = async (itemId) => {
     try {
-      var res = await axios.delete(`http://localhost:3000/products/${itemId}`);
+      var res = await deleteProductAPICall(itemId);
       console.log("Item successfully deleted.");
     } catch (error) {
       console.log("failure");
