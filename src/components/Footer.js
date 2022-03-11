@@ -4,7 +4,7 @@ import React from 'react';
 const Footer = () => {
 
   return (
-  <div className="navbar navbar-dark bg-dark navbar-fixed-bottom" id="footer">
+  <div className="footer--pin navbar navbar-dark bg-dark navbar-fixed-bottom" id="footer">
  
     <a className="primary col-6 nav-link text-center" data-bs-toggle="modal" data-bs-target="#myModal">Newsletter</a>
 

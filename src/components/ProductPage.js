@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { getProductsAPICall, postPurchasesAPICall, putPurchasesAPICall, getPurchasesAPICall } from "./../Api";
+import { getProductsAPICall, postPurchasesAPICall, putPurchasesAPICall, getPurchasesAPICall, getProductsBySearchAPICall } from "./../Api";
 import Search from "./Search";
 
 const ProductPage = () => {
@@ -30,6 +30,11 @@ const ProductPage = () => {
     }
   };
  
+  const returnCategory = async (category) => {
+    const products = await getProductsBySearchAPICall(category)
+    console.log(products);
+    setProductData(products.data.data);
+  }
   // Takes in Item on CART click and adds it to state variable caryItems.
   const handleClick = (item) => {
     console.log("ITEM IS: ", item);
@@ -80,7 +85,7 @@ const ProductPage = () => {
 
   return (
     <div className="container">
-      <Search />
+      <Search handleCategory={returnCategory}/>
       <div className="row card-columns">
         {productData.map((item) => (
           <div key={item._id} className="card col-sm-12 col-lg-4 col-md-6 text-center">
@@ -88,6 +93,7 @@ const ProductPage = () => {
             <div className="card-body d-flex flex-column ">
               <div className="mt-auto">
                 <h6 className="card-title">{item.name}</h6>
+                <p>{item.description}</p>
                 <p className="card-text">${item.price}</p>
                 <button onClick={() => {handleClick(item)}} className="btn btn-success">
                   Cart

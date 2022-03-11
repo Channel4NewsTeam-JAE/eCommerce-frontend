@@ -1,11 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 
-const Search  = () => {
+const Search  = ({handleCategory}) => {
+    const[category, setCategory] = useState('');
+
+    const handleChange = (event) => {
+        setCategory(event.target.value);
+    }
+
+    const handleSubmit = (event) => {
+        handleCategory(category)
+    }
     return (
         <div className="input-group">
-            <input className='searchInput form-control rounded' type="text"/>
-            <button type="button" class="btn btn-outline-primary">Search Stores</button>
+            <input className='searchInput form-control rounded' type="text" onChange={handleChange}/>
+            <button type="button" class="btn btn-outline-primary" onClick={handleSubmit}>Search Stores</button>
         </div>
     )
 }

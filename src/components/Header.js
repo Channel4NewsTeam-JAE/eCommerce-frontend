@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <a className="navbar-brand" href="#">
-        ECommerce
+        GarageSale
       </a>
       <button
         className="custom-toggler navbar-toggler"
