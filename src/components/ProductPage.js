@@ -78,14 +78,6 @@ const ProductPage = () => {
     }
   }
 
-
-//   const purchaseSchema = new mongoose.Schema({
-//     totalPrice: Number,
-//     paid: Boolean,
-//     products: [{type: mongoose.Schema.Types.ObjectId, ref:'Product'}]
-// })
-
-
   return (
     <div className="container">
       <Search />
