@@ -1,6 +1,6 @@
 import React ,{useState} from 'react';
 import {useNavigate} from 'react-router-dom';
-import { postProductAPICall } from '../Api';
+import { postProductAPICall } from './../Api';
 
 
 const ProductForm = () => {
