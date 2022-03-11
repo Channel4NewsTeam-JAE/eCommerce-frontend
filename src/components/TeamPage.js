@@ -11,7 +11,7 @@ const Team = () => {
             </div>
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                <img src="https://th.bing.com/th/id/R.a8f6826502f5b009ff4db1bbd17760d6?rik=HTzJpwZdf9a1tA&pid=ImgRaw&r=0" className="d-block w-100" alt="Ethan-Averbukh-Photo"/>
+                <img src="http://moviefail.com/wp-content/uploads/2015/10/missionimpossibleroguenation-4.jpg" className="d-block w-100" alt="Ethan-Averbukh-Photo"/>
                 <div className="carousel-caption d-none d-md-block">
                     <a href="#">Ethan Averbukh</a>
                     <p>Ethans contribution to the project</p>
