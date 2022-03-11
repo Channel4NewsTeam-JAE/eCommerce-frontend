@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       
       <Header />
-      <main>
+      <main className='content-container'>
         <Routes>
           <Route path='/' element={<Main />}/>
           <Route path='/Products' element={<ProductPage/>}/>
