@@ -27,7 +27,16 @@ code {
 }
 
 
+.carouselContainer img {
+  height: 700px;
 
+}
+
+
+.carouselContainer a {
+  text-decoration: none;
+  font-size: 38px;
+}
 /* .card img {
   width:100px;
   height:100px;
