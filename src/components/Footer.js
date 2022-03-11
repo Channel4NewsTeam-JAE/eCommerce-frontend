@@ -6,15 +6,15 @@ const Footer = () => {
   return (
   <div className="footer--pin navbar navbar-dark bg-dark navbar-fixed-bottom" id="footer">
  
-    <a className="primary col-6 nav-link text-center" data-bs-toggle="modal" data-bs-target="#myModal">Newsletter</a>
+    <a className="primary col-6 nav-link text-center" data-bs-toggle="modal" data-bs-target="#myModal">Contact Us</a>
 
-    <a className="primary col-6 nav-link active text-center" data-bs-toggle="modal" data-bs-target="#myModal2">Contact Us</a>
+    <a className="primary col-6 nav-link active text-center" data-bs-toggle="modal" data-bs-target="#myModal2">Newsletter</a>
 
   <div className="modal" id="myModal">
     <div className="modal-dialog">
       <div className="modal-content">
         <div className="modal-header">
-          <h4 className="modal-title">Register for Newsletter</h4>
+          <h4 className="modal-title">Contact Us</h4>
           <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div className="modal-body">
@@ -36,7 +36,7 @@ const Footer = () => {
     <div className="modal-dialog">
       <div className="modal-content">
         <div className="modal-header">
-          <h4 className="modal-title">Contact Us</h4>
+          <h4 className="modal-title">Register for Newsletter</h4>
           <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div className="modal-body">
