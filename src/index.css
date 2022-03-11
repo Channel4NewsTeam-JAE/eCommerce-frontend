@@ -26,12 +26,6 @@ code {
   margin-bottom: 12px;
 }
 
-.carousel {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-} 
-
 
 .carouselContainer img {
   height: 700px;
