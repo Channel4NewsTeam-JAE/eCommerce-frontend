@@ -1,4 +1,3 @@
-import {useState} from 'react';
 import {Route, Routes} from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
@@ -7,20 +6,20 @@ import Main from './components/Main';
 import ProductPage from './components/ProductPage';
 import ProductForm from './components/ProductForm';
 import Team from './components/TeamPage';
+import CartPage from './components/CartPage';
 
 function App() {
-  const [isSelected, setIsSelected] = useState(false);
   return (
     <div className="App">
       
       <Header />
       <main>
         <Routes>
-          {/* <Route path='/' element={<Header />} /> */}
           <Route path='/' element={<Main />}/>
-          <Route path='/products' element={<ProductPage/>}/>
-          <Route path='/products/form' element={<ProductForm />}/>
-          <Route path='/team' element={<Team />}/>
+          <Route path='/Products' element={<ProductPage/>}/>
+          <Route path='/Products/form' element={<ProductForm />}/>
+          <Route path='/Team' element={<Team />}/>
+          <Route path='/Cart' element={<CartPage />} />
         </Routes>
       </main>
       <Footer />
