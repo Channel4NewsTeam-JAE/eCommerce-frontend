@@ -17,6 +17,10 @@ const ProductPage = () => {
     getProductData();
   }, [deletedItems]);
 
+  useEffect(() => {
+    addToPurchase(cartItems)
+  },[JSON.stringify(cartItems)])
+
   const removeProduct = async (itemId) => {
     try {
       var res = await axios.delete(`http://localhost:3000/products/${itemId}`);
@@ -25,16 +29,21 @@ const ProductPage = () => {
       console.log("failure");
     }
   };
-
+ 
+  // Takes in Item on CART click and adds it to state variable caryItems.
   const handleClick = (item) => {
+    console.log("ITEM IS: ", item);
+    
 
-    const cartCopy = cartItems.slice()
-    cartCopy.push(item)
-    setCartItems(cartCopy)
-    // console.log(cartItems)
-    addToPurchase(cartItems)
+    setCartItems((prevState) => {
+      const addedItemToCart = [item, ...prevState]
+      return addedItemToCart
+    })
+  
   }
 
+  // Calculates totalPrice of items in cart, gets itemIDS, and runs POST api call
+  // IF cartItems.length === 1
   const addToPurchase = async (cart) => {
     console.log("CART: ", cart)
     let priceSum = 0;
@@ -45,8 +54,11 @@ const ProductPage = () => {
       priceSum += cart[i].price
       itemIDs.push(cart[i]._id)
     }    
-
-    if (cartItems.length === 1) {
+    if(cart.length < 1) {
+      return
+    }
+    else if(cart.length === 1) {
+      console.log("posted data")
       await postPurchasesAPICall({
         totalPrice: priceSum,
         paid: false,
@@ -54,15 +66,15 @@ const ProductPage = () => {
       })
     } else {
       const purchase = await getPurchasesAPICall()
-      
-      console.log("PURCHASE: ", purchase)
+      const purchaseID = purchase.data.data[0]._id
+      console.log("PURCHASE: ", purchase.data.data)
 
-      // await putPurchasesAPICall({
-        
-      //   totalPrice: priceSum,
-      //   paid: false,
-      //   products: itemIDs
-      // })
+      await putPurchasesAPICall({
+        id: purchaseID,
+        totalPrice: priceSum,
+        paid: false,
+        products: itemIDs
+      })
     }
   }
 
@@ -79,13 +91,13 @@ const ProductPage = () => {
       <Search />
       <div className="row card-columns">
         {productData.map((item) => (
-          <div key={item._id} onClick={() =>  {handleClick(item)}} className="card col-sm-12 col-lg-4 col-md-6 text-center">
+          <div key={item._id} className="card col-sm-12 col-lg-4 col-md-6 text-center">
             <img className="card-img-top" src={item.image} />
             <div className="card-body d-flex flex-column ">
               <div className="mt-auto">
                 <h6 className="card-title">{item.name}</h6>
                 <p className="card-text">${item.price}</p>
-                <button onClick={handleClick} className="btn btn-outline-success">
+                <button onClick={() => {handleClick(item)}} className="btn btn-outline-success">
                   Cart
                 </button>
                 <button className="btn btn-outline-success">List</button>
