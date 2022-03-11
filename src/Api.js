@@ -5,6 +5,11 @@ const getProductsAPICall = async () => {
     const products = await axios.get("http://localhost:3000/products");
     return products;
 }
+
+const getProductsBySearchAPICall = async (category) => {
+    const products = await axios.get(`http://localhost:3000/products/search/${category}`)
+    return products;
+}
 const postProductAPICall = async (product) => {
     const productData = await axios.post("http://localhost:3000/products", {
         "name": product.name,
@@ -102,6 +107,7 @@ const deleteSellerAPICall = async (seller) => {
 export {
     //GETTERS
     getProductsAPICall,
+    getProductsBySearchAPICall,
     getPurchasesAPICall,
     getSellersAPICall,
 

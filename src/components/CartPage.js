@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
 import { getPurchasesAPICall, putPurchasesAPICall } from "./../Api";
 
@@ -66,10 +65,10 @@ const CartPage = () => {
             </div>
           </div>
         ))}
-        <div className="row">
+        {cartData.length > 0 && <div className="row">
           <h5 className="col-6 text-end ">Total Price: </h5>
-          <div className="col-6 text-center">{totalPrice}</div>
-        </div>
+          <div className="col-6 text-center">{totalPrice.toFixed(2)}</div>
+        </div>}
       </div>
     );
   } else {
